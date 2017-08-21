@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\begin{document}
+
+
+
+<<loading>>=
+install.packages("sqldf")
+library(sqldf)
+library(dplyr)
+
+House_hold_electricity <- read.csv.sql("household_power_consumption.txt", 
+                                       sep = ';', header = TRUE,
+                                       sql="select * from file where Date in ('1/2/2007', '2/2/2007')")
+
+
+
+#House_hold_electricity$Date <-
+ #   as.Date(House_hold_electricity$Date, "%d/%m/%Y")
+
+House_hold_electricity$Date1 <- paste(House_hold_electricity$Date, 
+                                      House_hold_electricity$Time, sep = " ")
+
+House_hold_electricity$Date1 <- strptime(House_hold_electricity$Date1
+                                         , format="%d/%m/%Y %H:%M:%S")
+
+
+House_hold_electricity$Date <-
+    as.Date(House_hold_electricity$Date, "%d/%m/%Y")
+
+
+
+@
+
+
+plot3
+
+
+<<>>=
+
+png(filename = "plot3.png",
+     width = 480, height = 480)
+
+
+plot(House_hold_electricity$Date1,
+     House_hold_electricity$Sub_metering_1,
+     type = "l",
+     ylab = "Energy submetering",
+     xlab = "datetime",
+     main = "Measurement of the three group 
+      of appliances consuming the bulk of electical
+     power")
+
+lines(House_hold_electricity$Date1,
+     House_hold_electricity$Sub_metering_2,
+     col = "red")
+
+lines(House_hold_electricity$Date1,
+     House_hold_electricity$Sub_metering_3,
+     col = "blue")
+
+legend("topright",
+        c("Sub_metering_1",
+          "Sub_metering_2",
+          "Sub_metering_3"
+               ),
+       col = c("black", 
+               "red",
+               "blue"),
+       lty = c(1),
+       cex = 0.6
+       )
+
+@
+
+
+
+\end{document}

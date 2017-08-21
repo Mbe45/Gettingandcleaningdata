@@ -1,0 +1,195 @@
+Codebook for the Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+                            
+###################################################################################################################################
+Description f the variables in the dataset
+
+subject_ID: ID variable that identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+
+activity  : Describe the types of activity each subject took for each window sample. They are coded as facotrs where 
+    1 = WALKING
+
+    2 = WALKING_UPSTAIRS
+
+    3 = WALKING_DOWNSTAIRS
+    
+4 = SITTING
+    
+5 = STANDING
+    
+6 = LAYING
+
+
+
+The variables below come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+
+
+
+tBodyAcc-mean()-X: body acceleration mean values on the x axis of the phone(minutes) 
+             
+tBodyAcc-mean()-Y:  body acceleration mean values on the y axis of the phone(minutes) 
+          
+tBodyAcc-mean()-Z: Total body acceleration mean values on the z axis of the phone(minutes) 
+           
+tBodyAcc-std()-X:  Total body acceleration standard deviation values on the x axis of the phone(minutes)
+              
+tBodyAcc-std()-Y:  Total body acceleration standard deviation values on the y axis of the phone(minutes) 
+
+tBodyAcc-std()-Z:  Total body acceleration standard deviation values on the z axis of the phone(minutes) 
+             
+tGravityAcc-mean()-X: Total gravity acceleration mean values on the X axis of the phone 
+           
+tGravityAcc-mean()-Y: Total gravity acceleration mean values on the y axis of the phone 
+           
+tGravityAcc-mean()-Z: Total gravity acceleration mean values on the z axis of the phone 
+            
+tGravityAcc-std()-X:  Total gravity acceleration standard diviation values on the x axis of the phone 
+            
+tGravityAcc-std()-Y:  Total body gravity acceleration standard diviation values on the y axis of the phone  
+          
+tGravityAcc-std()-Z:  body gravity acceleration standard diviation values on the z axis of the phone 
+        
+tBodyAccJerk-mean()-X: Jerk of the body mean value on the x axis of the phone      
+
+tBodyAccJerk-mean()-Y: Jerk of the body mean value on the y axis of the phone 
+       
+tBodyAccJerk-mean()-Z: Jerk of the body mean value on the z axis of the phone
+
+tBodyAccJerk-std()-X:  Jerk of the body standard deviation value on the x axis of the phone    
+     
+tBodyAccJerk-std()-Y:  Jerk of the body standard deviation value on the y axis of the phone
+
+tBodyAccJerk-std()-Z:  Jerk of the body standard deviation value on the z axis of the phone   
+    
+tBodyGyro-mean()-X:    body gyroscope mean value on the x axis of the phone  
+
+tBodyGyro-mean()-Y:    Total body gyroscope mean value on the y axis of the phone 
+          
+tBodyGyro-mean()-Z:    Total body gyroscope mean value on the z axis of the phone
+
+tBodyGyro-std()-X:    Total body gyroscope standard deviation value on the x axis of the phone 
+           
+tBodyGyro-std()-Y:    Total body gyroscope standard deviation value on the y axis of the phone
+
+tBodyGyro-std()-Z:    Total body gyroscope standard deviation value on the z axis of the phone 
+             
+tBodyGyroJerk-mean()-X: Jerk of the body gyroscope mean value on the x axis of the phone   
+    
+tBodyGyroJerk-mean()-Y: Jerk of the body gyroscope mean value on the y axis of the phone  
+       
+tBodyGyroJerk-mean()-Z: Jerk of the body gyroscope mean value on the z axis of the phone  
+ 
+tBodyGyroJerk-std()-X:  Jerk of the body gyroscope standard deviation value on the x axis of the phone
+          
+tBodyGyroJerk-std()-Y:  Jerk of the body gyroscope standard deviation value on the y axis of the phone
+
+tBodyGyroJerk-std()-Z:  Jerk of the body gyroscope standard deviation value on the z axis of the phone 
+         
+tBodyAccMag-mean():     Total body acceleration magnitude mean values
+
+tBodyAccMag-std():      Total body acceleration magnitude standard deviation values 
+             
+tGravityAccMag-mean():  Total gravity acceleration magnitude mean value
+
+tGravityAccMag-std():   Total gravity acceleration magnitude standard deviation value
+         
+tBodyAccJerkMag-mean():  Total body acceleration Jerk magnitude mean value
+
+tBodyAccJerkMag-std():   Total body acceleration Jerk magnitude standard deviation value   
+       
+tBodyGyroMag-mean():     Total body gyroscope magnitude mean value
+
+tBodyGyroMag-std():      Total body gyroscope magnitude standard deviation value
+             
+tBodyGyroJerkMag-mean(): Total body gyroscope jerk magnitude mean value
+
+tBodyGyroJerkMag-std(): body gyroscope jerk magnitude standard deviation value     
+
+####Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+    
+fBodyAcc-mean()-X: body acceleration mean value on the x axis of the phone 
+
+fBodyAcc-mean()-Y: body acceleration mean value on the y axis of the phone 
+            
+fBodyAcc-mean()-Z: body acceleration mean value on the z axis of the phone
+
+fBodyAcc-std()-X: body acceleration standard deviation value on the x axis of the phone  
+             
+fBodyAcc-std()-Y: body acceleration standard deviation value on the y axis of the phone
+
+fBodyAcc-std()-Z: body acceleration standard deviation value on the z axis of the phone 
+             
+fBodyAcc-meanFreq()-X: body acceleration mean frequency value on the x axis of the phone
+
+fBodyAcc-meanFreq()-Y : body acceleration mean frequency value on the y axis of the phone
+         
+fBodyAcc-meanFreq()-Z: body acceleration mean frequency value on the z axis of the phone
+
+fBodyAccJerk-mean()-X: Jerk of the body mean value on the x axis of the phone   
+       
+fBodyAccJerk-mean()-Y: Jerk of the body mean value on the y axis of the phone 
+    
+fBodyAccJerk-mean()-Z: Jerk of the body mean value on the z axis of the phone 
+         
+fBodyAccJerk-std()-X:  Jerk of the body standard deviation value on the x axis of the phone
+      
+fBodyAccJerk-std()-Y:  Jerk of the body standard deviation value on the y axis of the phone  
+         
+fBodyAccJerk-std()-Z:  Jerk of the body standard deviation value on the z axis of the phone
+  
+fBodyAccJerk-meanFreq()-X: Jerk of the body mean frequency value on the x axis of the phone 
+     
+fBodyAccJerk-meanFreq()-Y: Jerk of the body mean frequency value on the y axis of the phone 
+
+fBodyAccJerk-meanFreq()-Z: Jerk of the body mean frequency value on the z axis of the phone 
+     
+fBodyGyro-mean()-X:      Gyroscope mean values on the x axis of the phone
+
+fBodyGyro-mean()-Y:      Gyroscope mean values on the y axis of the phone
+           
+fBodyGyro-mean()-Z:      Gyroscope mean values on the z axis of the phone
+
+fBodyGyro-std()-X:       Gyroscope standard deviation values on the x axis of the phone
+
+              
+fBodyGyro-std()-Y:       Gyroscope standard deviation values on the y axis of the phone
+
+fBodyGyro-std()-Z:       Gyroscope standard deviation values on the z axis of the phone
+              
+fBodyGyro-meanFreq()-X:  Gyroscope mean frequency values on the x axis of the phone
+ 
+fBodyGyro-meanFreq()-Y:  Gyroscope mean frequency values on the y axis of the phone
+    
+fBodyGyro-meanFreq()-Z:  Gyroscope mean frequency values on the z axis of the phone
+      
+fBodyAccMag-mean():  body acceleration magnitude mean value 
+            
+fBodyAccMag-std():    body accelerometer magnitude standard deviation value
+
+fBodyAccMag-meanFreq():   body accelerometer magnitude mean frequency value   
+    
+fBodyBodyAccJerkMag-mean(): jerk of the body accelerometer mean magnitude value
+
+fBodyBodyAccJerkMag-std(): jerk of the body accelerometer magnitude standard deviation value 
+     
+fBodyBodyAccJerkMag-meanFreq(): jerk of the body accelerometer magnitude mean frequency value
+
+fBodyBodyGyroMag-mean():   Gryroscope magnitude of the body mean
+     
+fBodyBodyGyroMag-std():   Gryroscope magnitude of the body standard devition
+         
+fBodyBodyGyroMag-meanFreq(): Gryroscope magnitude of the body mean frequency values
+             
+fBodyBodyGyroJerkMag-mean(): jerk of he body body mean magnitude
+
+fBodyBodyGyroJerkMag-std(): jerk of he body body standard deviation magnitude values
+    
+fBodyBodyGyroJerkMag-meanFreq(): jerk of he body body mean frequency magnitude values

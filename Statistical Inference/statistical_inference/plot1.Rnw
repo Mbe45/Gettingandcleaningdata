@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\begin{document}
+
+\subsection{Introduction}
+This script is about exploratory analyses, which is usually the first step in diagsecting data befor analyses.
+
+<<loading>>=
+install.packages("sqldf")
+library(sqldf)
+library(dplyr)
+
+House_hold_electricity <- read.csv.sql("household_power_consumption.txt", 
+                                       sep = ';', header = TRUE,
+                                       sql="select * from file where Date in ('1/2/2007', '2/2/2007')")
+
+
+
+#House_hold_electricity$Date <-
+ #   as.Date(House_hold_electricity$Date, "%d/%m/%Y")
+
+House_hold_electricity$Date1 <- paste(House_hold_electricity$Date, 
+                                      House_hold_electricity$Time, sep = " ")
+
+House_hold_electricity$Date1 <- strptime(House_hold_electricity$Date1
+                                         , format="%d/%m/%Y %H:%M:%S")
+
+
+House_hold_electricity$Date <-
+    as.Date(House_hold_electricity$Date, "%d/%m/%Y")
+
+
+save(House_hold_electricity,
+     file = "House_hold_electricity.Rdata")
+
+png(filename = "plot1.png",
+     width = 480, height = 480)
+
+hist(House_hold_electricity$Global_active_power, col = "red", xlab = "Global active power(kilowatts)", main = "Global Active power")
+
+dev.off()
+@
+
+
+\end{document}

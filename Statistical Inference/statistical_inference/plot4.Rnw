@@ -1,0 +1,108 @@
+\documentclass{article}
+
+\begin{document}
+
+
+
+
+<<loading>>=
+install.packages("sqldf")
+library(sqldf)
+library(dplyr)
+
+House_hold_electricity <- read.csv.sql("household_power_consumption.txt", 
+                                       sep = ';', header = TRUE,
+                                       sql="select * from file where Date in ('1/2/2007', '2/2/2007')")
+
+
+
+#House_hold_electricity$Date <-
+ #   as.Date(House_hold_electricity$Date, "%d/%m/%Y")
+
+House_hold_electricity$Date1 <- paste(House_hold_electricity$Date, 
+                                      House_hold_electricity$Time, sep = " ")
+
+House_hold_electricity$Date1 <- strptime(House_hold_electricity$Date1
+                                         , format="%d/%m/%Y %H:%M:%S")
+
+
+House_hold_electricity$Date <-
+    as.Date(House_hold_electricity$Date, "%d/%m/%Y")
+
+
+
+@
+
+plot4
+
+
+
+<<>>=
+
+
+png(filename = "plot4.png",
+     width = 480, height = 480)
+
+par(mfrow = c(2,2))
+
+plot(House_hold_electricity$Date1, 
+     House_hold_electricity$Global_active_power,
+     type = "l",
+     #main = "Global Active power household \n consumption over two days",
+     ylab = "Global Active powers(killowatts)",
+     xlab = ""
+     )
+
+
+
+plot(House_hold_electricity$Date1,
+     House_hold_electricity$Voltage,
+     type = "l",
+     xlab = "datetime",
+     ylab = "Voltage")
+
+
+
+plot(House_hold_electricity$Date1,
+     House_hold_electricity$Sub_metering_1,
+     type = "l",
+     ylab = "Energy submetering",
+     xlab = ""
+     )
+
+lines(House_hold_electricity$Date1,
+     House_hold_electricity$Sub_metering_2,
+     col = "red")
+
+lines(House_hold_electricity$Date1,
+     House_hold_electricity$Sub_metering_3,
+     col = "blue")
+
+legend("topright",
+        c("Sub_metering_1",
+          "Sub_metering_2",
+          "Sub_metering_3"
+               ),
+       col = c("black", 
+               "red",
+               "blue"),
+       lty = c(1),
+       bty = "n",
+       cex = 0.8
+              )
+
+
+plot(House_hold_electricity$Date1,
+     House_hold_electricity$Global_reactive_power,
+     type = "l",
+     xlab = "datetime",
+     ylab = "Global reactive power")
+
+
+
+dev.off()
+@
+
+
+
+\end{document}
